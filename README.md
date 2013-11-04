@@ -14,3 +14,9 @@ Simply set trimet_update.py to be executable on your server, and add a cron job 
 re-run the script.  My server has:
 
 0 * * * * /bin/rm /var/www/trimet; /home/cdunbar/trimet_update.py
+
+
+Required Libraries:
+https://github.com/amcewen/HttpClient
+https://github.com/charlesdunbar/libraries/tree/master/ht1632c
+http://playground.arduino.cc/uploads/Code/Time.zip
