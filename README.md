@@ -17,6 +17,8 @@ re-run the script.  My server has:
 
 
 Required Libraries:
+<pre>
 https://github.com/amcewen/HttpClient
 https://github.com/charlesdunbar/libraries/tree/master/ht1632c
 http://playground.arduino.cc/uploads/Code/Time.zip
+</pre>
