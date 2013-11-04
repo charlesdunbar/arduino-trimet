@@ -8,3 +8,9 @@ trimet_update.py contains the parsing needed to pull data out of trimet's websit
 You'll need to add your API key, in addition to your route numbers and bus lines you care about.
 
 Point url and path in StreetcarTrimet to where the parsed data is served from.
+
+
+Simply set trimet_update.py to be executable on your server, and add a cron job to delete the old file and
+re-run the script.  My server has:
+
+0 * * * * /bin/rm /var/www/trimet; /home/cdunbar/trimet_update.py
