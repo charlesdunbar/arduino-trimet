@@ -6,6 +6,14 @@
  Grabs information from a webiste that's
  populated with trimet_update.py
  
+ Change url and path to match where you're putting trimet times.
+ 
+ Script output looks like:
+ 635 - 77 - 10:04
+ 635 - 17 - 10:10
+ 635 - 77 - 10:35
+ 635 - 17 - 10:37
+
  
  Author: Charles Dunbar
  
@@ -99,11 +107,16 @@ void loop() {
     Serial.println(retCode);
     if (retCode != 200) { // Wait one sec before trying website again
       delay(1000);
-      i--;
+      // Reset minute, don't go below 0
+      if (i > 1) {
+        i--;
+      } else {
+        i = 0;
+      }
       continue;  // Restart loops, don't want bad data in array
     }
 
-    int n = 0;  // Counter used in next loop
+    byte n = 0;  // Counter used in next loop
     for (int x = 0; x < 12; x++){ // 5s * 12 = 60s,
       // Cycle through streetcar time and print
       // new value every 5s
